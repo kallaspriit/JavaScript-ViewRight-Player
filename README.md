@@ -3,8 +3,7 @@ JavaScript-ViewRight-Player
 
 JavaScript wrapper library for the ViewRight player.
 
-The API includes the following methods (see doc/index.html for reference):
----------------------------------------
+**The API includes the following methods (see doc/index.html for reference):**
 
 * abortOperation
 * destroy
