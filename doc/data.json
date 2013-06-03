@@ -1,0 +1,793 @@
+{
+    "project": {},
+    "files": {
+        "ViewRightPlayer.js": {
+            "name": "ViewRightPlayer.js",
+            "modules": {},
+            "classes": {
+                "Player": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Player": {
+            "name": "Player",
+            "shortname": "Player",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "ViewRightPlayer.js",
+            "line": 4,
+            "description": "ViewRight Verimatrix player wrapper.\n\nProvides convenient interface to the ViewRight API.",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 25,
+            "description": "List of possible player statuses.",
+            "itemtype": "property",
+            "name": "State",
+            "type": "{Object}",
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 46,
+            "description": "List of possible status codes.",
+            "itemtype": "property",
+            "name": "StatusCode",
+            "type": "{Object}",
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 91,
+            "description": "Logs a message.\n\nAccepts any number of any parameters.\n\nOver-define this in your instance of the player for custom logging.",
+            "itemtype": "method",
+            "name": "log",
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 108,
+            "description": "Logs an error.\n\nAccepts any number of any parameters.\n\nOver-define this in your instance of the player for custom error handling.",
+            "itemtype": "method",
+            "name": "log",
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 125,
+            "description": "Called when the state of the player changes.\n\nThe codes match those of ViewRightPlayer.State.\n\nBy default, it logs the state changes but you can over-define this in your code.",
+            "itemtype": "method",
+            "name": "onStateChanged",
+            "params": [
+                {
+                    "name": "newState",
+                    "description": "New state code",
+                    "type": "Number"
+                },
+                {
+                    "name": "lastState",
+                    "description": "Last state code",
+                    "type": "Number"
+                }
+            ],
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 140,
+            "description": "Called when the playback position changes.\n\nThe time is in seconds.\n\nBy default, it doesn't do anything but you can over-define this in your code.",
+            "itemtype": "method",
+            "name": "onPositionChanged",
+            "params": [
+                {
+                    "name": "newPosition",
+                    "description": "New position in seconds",
+                    "type": "Number"
+                },
+                {
+                    "name": "lastPosition",
+                    "description": "Last position",
+                    "type": "Number"
+                }
+            ],
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 153,
+            "description": "Returns the response code of the last called action.\n\nThe codes match those of ViewRightPlayer.StatusCode.",
+            "itemtype": "method",
+            "name": "getLastResponseCode",
+            "return": {
+                "description": "Response code or null if no calls have been made",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 165,
+            "description": "Returns the name of the response code of the last called action.\n\nThe name match those of ViewRightPlayer.StatusCode.",
+            "itemtype": "method",
+            "name": "getLastResponseName",
+            "return": {
+                "description": "Response code name",
+                "type": "String"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 177,
+            "description": "Returns the response code of the last error.\n\nThe codes match those of ViewRightPlayer.StatusCode.",
+            "itemtype": "method",
+            "name": "getLastErrorCode",
+            "return": {
+                "description": "Error Response code or null if no calls have been made",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 189,
+            "description": "Returns the name of the response code of the last error.\n\nThe name match those of ViewRightPlayer.StatusCode.",
+            "itemtype": "method",
+            "name": "getLastErrorName",
+            "return": {
+                "description": "Last error code name",
+                "type": "String"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 201,
+            "description": "Returns the last requested URL.",
+            "itemtype": "method",
+            "name": "getLastOpenedUrl",
+            "return": {
+                "description": "Last requested URL or null if none made.",
+                "type": "String"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 211,
+            "description": "Initializes the ViewRightPlayer.",
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "container",
+                    "description": "Player container element or selector",
+                    "type": "String|DOMElement"
+                }
+            ],
+            "return": {
+                "description": "Self",
+                "type": "Player"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 255,
+            "description": "Destroys the player.\n\nUnloads the player and removes the DOM element.",
+            "itemtype": "method",
+            "name": "destroy",
+            "return": {
+                "description": "Was destroying the player successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 288,
+            "description": "Returns whether the device is provisioned.",
+            "itemtype": "method",
+            "name": "isProvisioned",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 298,
+            "description": "Returns client id.",
+            "itemtype": "method",
+            "name": "getClientId",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 308,
+            "description": "Returns current state code.",
+            "itemtype": "method",
+            "name": "getState",
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 318,
+            "description": "Returns current or given state code name.",
+            "itemtype": "method",
+            "name": "getStateName",
+            "params": [
+                {
+                    "name": "code",
+                    "description": "Optional code to get name of, otherwise gives current state name",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 341,
+            "description": "Returns the status of the last VCAS communication.",
+            "itemtype": "method",
+            "name": "getVerimatrixStatusCode",
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 351,
+            "description": "Returns the status name of the last VCAS communication.",
+            "itemtype": "method",
+            "name": "getVerimatrixStatusName",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 371,
+            "description": "Returns whether the player is currently muted.",
+            "itemtype": "method",
+            "name": "isMuted",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 381,
+            "description": "Returns whether the player is currently in fullscreen mode.",
+            "itemtype": "method",
+            "name": "isFullscreen",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 391,
+            "description": "Returns whether currently playing media is seekable.",
+            "itemtype": "method",
+            "name": "isMediaSeekable",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 401,
+            "description": "Returns whether currently playing media is secure.",
+            "itemtype": "method",
+            "name": "isMediaSecure",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 411,
+            "description": "Opens and starts playing an URL.",
+            "itemtype": "method",
+            "name": "open",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "URL to open",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 435,
+            "description": "Pauses the player.",
+            "itemtype": "method",
+            "name": "pause",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 459,
+            "description": "Resumes the player.",
+            "itemtype": "method",
+            "name": "resume",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 483,
+            "description": "Stops the player.",
+            "itemtype": "method",
+            "name": "stop",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 504,
+            "description": "Rewinds the player.\n\nRewinds to the beginning of the playlist in the currently playing broadcast stream. This feature is not\nsupported when playing VOD stream.",
+            "itemtype": "method",
+            "name": "rewind",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 532,
+            "description": "Fast-forwards the player.\n\nBegins playing near the end of the playlist in the currently playing broadcast stream. This feature is not\nsupported when playing VOD stream.",
+            "itemtype": "method",
+            "name": "fastForward",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 560,
+            "description": "Sets whether the player should be muted.",
+            "itemtype": "method",
+            "name": "setMute",
+            "params": [
+                {
+                    "name": "enabled",
+                    "description": "Should mute be enabled",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 576,
+            "description": "Mutes the player.",
+            "itemtype": "method",
+            "name": "mute",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 586,
+            "description": "Un-mutes the player.",
+            "itemtype": "method",
+            "name": "unmute",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 596,
+            "description": "Toggles player mute.",
+            "itemtype": "method",
+            "name": "toggleMute",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 606,
+            "description": "Sets the balance.",
+            "itemtype": "method",
+            "name": "setBalance",
+            "params": [
+                {
+                    "name": "balance",
+                    "description": "Playback balance to use in range 0..100",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 624,
+            "description": "Sets whether the player should be fullscreened.",
+            "itemtype": "method",
+            "name": "setFullscreen",
+            "params": [
+                {
+                    "name": "enabled",
+                    "description": "Should fullscreen be used",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 640,
+            "description": "Enables fullscreen mode.",
+            "itemtype": "method",
+            "name": "enableFullscreen",
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 650,
+            "description": "Disables fullscreen mode.",
+            "itemtype": "method",
+            "name": "disableFullscreen",
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 660,
+            "description": "Sets whether hardware interlacing should be enabled.",
+            "itemtype": "method",
+            "name": "setHardwareInterlacing",
+            "params": [
+                {
+                    "name": "enabled",
+                    "description": "Should hardware interlacing be enabled",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 676,
+            "description": "Enabled hardware interlacing.",
+            "itemtype": "method",
+            "name": "enableHardwareInterlacing",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 686,
+            "description": "Disables hardware interlacing.",
+            "itemtype": "method",
+            "name": "disableHardwareInterlacing",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 696,
+            "description": "Returns whether hardware interlacing is being used.",
+            "itemtype": "method",
+            "name": "isUsingHardwareDeinterlacing",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 706,
+            "description": "Aborts currently requested operation.",
+            "itemtype": "method",
+            "name": "abortOperation",
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 720,
+            "description": "Returns SDK version.",
+            "itemtype": "method",
+            "name": "getSDKVersion",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 730,
+            "description": "Returns current client status as object.",
+            "itemtype": "method",
+            "name": "getClientStatus",
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 740,
+            "description": "Returns media width/height ratio.",
+            "itemtype": "method",
+            "name": "getAspectRatio",
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 756,
+            "description": "Returns the length of playing content in seconds.",
+            "itemtype": "method",
+            "name": "getContentLength",
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 766,
+            "description": "Returns current player position.",
+            "itemtype": "method",
+            "name": "getPosition",
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 776,
+            "description": "Returns current player position percentage of total length.",
+            "itemtype": "method",
+            "name": "getPlaybackPercentage",
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 792,
+            "description": "Returns current volume level in range 0..100.",
+            "itemtype": "method",
+            "name": "getVolume",
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 802,
+            "description": "Returns player balance in range 0..100.",
+            "itemtype": "method",
+            "name": "getBalance",
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 812,
+            "description": "Returns list of quality metrics:\n- jitter\n- continuityCounter\n- framesDropped\n- avgFrameRate\n- playlistRate\n- downloadRate",
+            "itemtype": "method",
+            "name": "getQualityMetrics",
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 835,
+            "description": "Sets playback position in seconds.",
+            "itemtype": "method",
+            "name": "setPosition",
+            "params": [
+                {
+                    "name": "position",
+                    "description": "Position in seconds",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 864,
+            "description": "Sets playback position in percentage 0..100.\n\nThis makes sense for VOD streams.",
+            "itemtype": "method",
+            "name": "setPlaybackPercentage",
+            "params": [
+                {
+                    "name": "percentage",
+                    "description": "Position in percentage",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 883,
+            "description": "Sets volume level in range 0..100.",
+            "itemtype": "method",
+            "name": "setVolume",
+            "params": [
+                {
+                    "name": "level",
+                    "description": "New Volume level",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Was the operation successful",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 901,
+            "description": "Validates API request response.\n\nIf the response is not SUCCESS, an error is triggered. The second parameter is the optional error message\nto show.",
+            "itemtype": "method",
+            "name": "_validateResponse",
+            "params": [
+                {
+                    "name": "code",
+                    "description": "Request response code",
+                    "type": "Number"
+                },
+                {
+                    "name": "errorMessage",
+                    "description": "Optional custom error message to show on error",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Was the response SUCCESS or something else",
+                "type": "Boolean"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 931,
+            "description": "Monitors the state for changes and triggers onStateChanged when state transitions.",
+            "itemtype": "method",
+            "name": "_monitorState",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        },
+        {
+            "file": "ViewRightPlayer.js",
+            "line": 947,
+            "description": "Monitors playback position and triggers onPositionChanged when it changes.",
+            "itemtype": "method",
+            "name": "_monitorPlayback",
+            "access": "private",
+            "tagname": "",
+            "class": "Player"
+        }
+    ],
+    "warnings": []
+}
