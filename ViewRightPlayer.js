@@ -831,6 +831,13 @@ window.ViewRightPlayer = (function() {
 		};
 	};
 
+	/**
+	 * Sets playback position in seconds.
+	 *
+	 * @method setPosition
+	 * @param {Number} position Position in seconds
+	 * @return {Boolean} Was the operation successful
+	 */
 	ViewRightPlayer.prototype.setPosition = function(position) {
 		var state = this.getState();
 
@@ -853,6 +860,15 @@ window.ViewRightPlayer = (function() {
 		);
 	};
 
+	/**
+	 * Sets playback position in percentage 0..100.
+	 *
+	 * This makes sense for VOD streams.
+	 *
+	 * @method setPlaybackPercentage
+	 * @param {Number} percentage Position in percentage
+	 * @return {Boolean} Was the operation successful
+	 */
 	ViewRightPlayer.prototype.setPlaybackPercentage = function(percentage) {
 		percentage = Math.min(Math.max(percentage, 0), 100);
 
@@ -863,6 +879,13 @@ window.ViewRightPlayer = (function() {
 		return this.setPosition(position);
 	};
 
+	/**
+	 * Sets volume level in range 0..100.
+	 *
+	 * @method setVolume
+	 * @param {Number} level New Volume level
+	 * @return {Boolean} Was the operation successful
+	 */
 	ViewRightPlayer.prototype.setVolume = function(level) {
 		level = Math.min(Math.max(level, 0), 100);
 
@@ -874,6 +897,18 @@ window.ViewRightPlayer = (function() {
 		);
 	};
 
+	/**
+	 * Validates API request response.
+	 *
+	 * If the response is not SUCCESS, an error is triggered. The second parameter is the optional error message
+	 * to show.
+	 *
+	 * @method _validateResponse
+	 * @param {Number} code Request response code
+	 * @param {String} [errorMessage] Optional custom error message to show on error
+	 * @return {Boolean} Was the response SUCCESS or something else
+	 * @private
+	 */
 	ViewRightPlayer.prototype._validateResponse = function(code, errorMessage) {
 		if (typeof(errorMessage) !== 'string') {
 			errorMessage = 'API request failed';
@@ -892,6 +927,12 @@ window.ViewRightPlayer = (function() {
 		}
 	};
 
+	/**
+	 * Monitors the state for changes and triggers onStateChanged when state transitions.
+	 *
+	 * @method _monitorState
+	 * @private
+	 */
 	ViewRightPlayer.prototype._monitorState = function() {
 		var currentState = this.getState();
 
@@ -902,6 +943,12 @@ window.ViewRightPlayer = (function() {
 		this._lastState = currentState;
 	};
 
+	/**
+	 * Monitors playback position and triggers onPositionChanged when it changes.
+	 *
+	 * @method _monitorPlayback
+	 * @private
+	 */
 	ViewRightPlayer.prototype._monitorPlayback = function() {
 		var currentPosition = this.getPosition();
 
